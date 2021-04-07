@@ -6,7 +6,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { ProductListComponent } from './product-list/product-list.component';
-
+import {ProductService} from './product-list/product.service';
+import { ProductDetailsComponent } from './product-details/product-details.component'
 @NgModule({
   imports: [
     BrowserModule,
@@ -14,6 +15,7 @@ import { ProductListComponent } from './product-list/product-list.component';
     ReactiveFormsModule,
     RouterModule.forRoot([
       { path: '', component: ProductListComponent },
+      { path: 'products/:productId', component: ProductDetailsComponent },
     ])
   ],
   declarations: [
@@ -21,6 +23,7 @@ import { ProductListComponent } from './product-list/product-list.component';
     TopBarComponent,
     ProductListComponent
   ],
+  providers: [ProductService],
   bootstrap: [
     AppComponent
   ]
