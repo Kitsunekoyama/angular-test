@@ -1,5 +1,5 @@
 export const products = [
-  {
+ /* {
     id: 1,
     name: 'Phone XL',
     price: 799,
@@ -16,7 +16,7 @@ export const products = [
     name: 'Phone Standard',
     price: 299,
     description: ''
-  }
+  }*/
 ];
 
 

@@ -1,8 +1,9 @@
 <h2>Products</h2>
 
-<div *ngFor="let product of products">
+<button (click)="fetchProduct()">Test</button>
+<div *ngFor="let product of products | async">
   <h3>
-      {{ product.name }}
+      {{ product.title }}
   </h3>
 </div>
 <!-- 
