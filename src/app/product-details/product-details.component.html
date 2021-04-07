@@ -1,4 +1,4 @@
 <h2>Product Details</h2>
-<p *ngIf="(product | async)">{{ product.title | async }}</p>
+<p *ngIf="(product | async)">{{(product | async)?.title}}</p>
 <h3>{{"product.titl"}}</h3>
 <p>Description : {{ "product.body" }}</p>

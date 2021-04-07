@@ -4,13 +4,14 @@ import { map } from 'rxjs/operators';
 //import { Http, Response } from '@angular/http';
 import { Observable, throwError } from "rxjs";
 
+
 @Injectable()
 export class ProductService {
   products; //: Observable<Object>;
   items = [];
   constructor(private http: HttpClient) {}
 
-  getProduct(id) {
+  getProduct(id): Observable<any> {
     
     return this.http.get('https://jsonplaceholder.typicode.com/posts/'+id);
     //return this.http.get('https://jsonplaceholder.typicode.com/posts/' + id)
