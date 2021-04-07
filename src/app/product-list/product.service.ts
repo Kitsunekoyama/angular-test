@@ -1,17 +1,23 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
+import { map } from 'rxjs/operators';
+//import { Http, Response } from '@angular/http';
 import { Observable, throwError } from "rxjs";
 
 @Injectable()
 export class ProductService {
-  products;
+  products; //: Observable<Object>;
+  items = [];
   constructor(private http: HttpClient) {}
-  public getProduct(id) : Observable<Object> {
-    console.log(id)
-    return this.http.get('https://jsonplaceholder.typicode.com/posts/' + id)
+
+  getProduct(id) {
+    
+    return this.http.get('https://jsonplaceholder.typicode.com/posts/'+id);
+    //return this.http.get('https://jsonplaceholder.typicode.com/posts/' + id)
   }
   fetchProduct(): Observable<Object> {
     this.products = this.http.get('https://jsonplaceholder.typicode.com/posts');
+    this.items = this.products
     return this.products;
   }
 }

@@ -12,7 +12,7 @@ export class ProductListComponent {
   products;
   fetchProduct() {
     this.products = this.productService.fetchProduct();
-    console.log(this.products);
+    //console.log(this.products[0].title);
   }
   
   share() {

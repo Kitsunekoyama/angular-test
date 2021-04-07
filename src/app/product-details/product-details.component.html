@@ -1,8 +1,4 @@
 <h2>Product Details</h2>
-<div *ngIf="(product | async); else elseBlock">
-<h3>{{product.title | async}}</h3>
-<p>Description : {{ product.body | async}}</p>
-</div>
-<ng-template #elseBlock>
-  Observable is loading. Please wait 
-</ng-template>
+<p *ngIf="(product | async)">{{ product.title | async }}</p>
+<h3>{{"product.titl"}}</h3>
+<p>Description : {{ "product.body" }}</p>
