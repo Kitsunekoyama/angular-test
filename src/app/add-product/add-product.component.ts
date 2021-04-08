@@ -9,16 +9,18 @@ import { FormBuilder } from '@angular/forms';
   styleUrls: ["./add-product.component.css"]
 })
 export class AddProduct {
-  description;
+ // description;
   checkoutForm = this.formBuilder.group({
     name: '',
     description: ''
   });
+  items = []
   item : {
     name : string,
     description : string
   }
   constructor(private productService: ProductService, private formBuilder: FormBuilder){}
+  onSubmit(): void {console.log("test")}
   addProduct(): void {
     console.log("test")
     console.log(this.checkoutForm.value)
