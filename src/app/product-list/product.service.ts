@@ -32,7 +32,7 @@ export class ProductService {
   }*/
   getProduct(id): Observable<any> {
     
-    return this.http.get('https://jsonplaceholder.typicode.com/posts/'+id);
+    return this.http.get('https://jsonplaceholder.typicode.com/posts/'+id + '/comments');
     //return this.http.get('https://jsonplaceholder.typicode.com/posts/' + id)
   }
   fetchProduct(): Observable<Object> {

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ProductService } from '../product-list/product.service';
 import { Observable} from "rxjs";
@@ -9,11 +9,13 @@ import { Observable} from "rxjs";
   styleUrls: ["./product-details.component.css"]
 })
 export class ProductDetailsComponent implements OnInit {
-  product: Observable<any>;
+  comments: Observable<any>;
+ // name: string;
+  title: string;
   id;
-  constructor(private productService: ProductService, private route: ActivatedRoute){}
+  constructor(private productService: ProductService, private route: ActivatedRoute){this.title = this.route.snapshot.paramMap.get('title')}
   ngOnInit() {
     this.id = this.route.snapshot.params['productId'];
-    this.product = this.productService.getProduct(this.id);
+    this.comments = this.productService.getProduct(this.id);
   }
 }

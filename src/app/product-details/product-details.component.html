@@ -1,2 +1,14 @@
-<h3 *ngIf="(product | async)">{{(product | async)?.title}}</h3>
-<p>{{(product | async)?.body}}</p>
+<h1>{{ title }}</h1>
+<h1>Comments</h1>
+<div *ngFor="let comment of comments| async">
+  <h2>
+    {{"From " + comment.email}}
+  </h2>
+  <h3>
+      {{ comment.name }}
+  </h3>
+  <p>
+      {{ comment.body}}
+  </p>
+  <br>
+</div>
