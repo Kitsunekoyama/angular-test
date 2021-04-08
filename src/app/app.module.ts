@@ -17,7 +17,7 @@ import { AddProduct } from './add-product/add-product.component'
     RouterModule.forRoot([
       { path: '', component: ProductListComponent },
       { path: 'products/:productId', component: ProductDetailsComponent },
-      {path: 'addProduct', component: AddProduct}
+      {path: 'products/add', component: AddProduct}
     ])
   ],
   declarations: [
