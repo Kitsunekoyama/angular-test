@@ -1,6 +1,14 @@
-<div>
-    <label for="name">
+<h2>Add Products</h2>
+<form [formGroup]="checkoutForm" (ngSubmit)="addProduct()">
+<label for="name">
       Name
     </label>
-    <input id="name" type="text">
-  </div>
+<input id="name" type="text" formControlName="name">
+<label for="description">
+      Description
+</label>
+<input id="description" type="text" formControlName="description">
+<a (click)="addProduct()" class="button" type="submit">
+  Create
+</a>
+</form>

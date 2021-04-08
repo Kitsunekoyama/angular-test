@@ -10,7 +10,12 @@ export class ProductService {
   products; //: Observable<Object>;
   items = [];
   constructor(private http: HttpClient) {}
-
+  addProduct() {
+    
+  }
+  getItems() {
+    return this.items;
+  }
   getProduct(id): Observable<any> {
     
     return this.http.get('https://jsonplaceholder.typicode.com/posts/'+id);
