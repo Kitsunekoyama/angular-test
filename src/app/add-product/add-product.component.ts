@@ -4,11 +4,11 @@ import { ProductService } from '../product-list/product.service';
 import { Observable} from "rxjs";
 
 @Component({
-  selector: "app-product-list",
-  templateUrl: "./product-details.component.html",
-  styleUrls: ["./product-details.component.css"]
+  selector: "app-add-product",
+  templateUrl: "./add-product.component.html",
+  styleUrls: ["./add-product.component.css"]
 })
-export class ProductDetailsComponent implements OnInit {
+export class AddProduct implements OnInit {
   product: Observable<any>;
   id;
   constructor(private productService: ProductService, private route: ActivatedRoute){}
