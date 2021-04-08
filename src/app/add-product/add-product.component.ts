@@ -18,9 +18,11 @@ export class AddProduct {
   });
   //product: Observable<any>;
   //id;
-  constructor(private productService: ProductService, private formBuilder: FormBuilder){}
+  constructor(private productService: ProductService, private formBuilder: FormBuilder, private router: Router){}
   addProduct(): void {
     // Process checkout data here
+    //window.alert("Please insert a name and a description for the product");
+    this.productService.addProduct();
     this.items = [];//this.productService.clearCart();
     console.warn('Your order has been submitted', this.checkoutForm.value);
     this.checkoutForm.reset();

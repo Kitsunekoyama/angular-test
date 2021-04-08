@@ -5,13 +5,26 @@ import { map } from 'rxjs/operators';
 import { Observable, throwError } from "rxjs";
 
 
+
 @Injectable()
 export class ProductService {
   products; //: Observable<Object>;
   items = [];
   constructor(private http: HttpClient) {}
   addProduct() {
-    
+    fetch('https://jsonplaceholder.typicode.com/posts', {
+  method: 'POST',
+  body: JSON.stringify({
+    title: 'foo',
+    body: 'bar',
+    userId: 1,
+  }),
+  headers: {
+    'Content-type': 'application/json; charset=UTF-8',
+  },
+})
+  .then((response) => response.json())
+  .then((json) => console.log(json));
   }
   getItems() {
     return this.items;
