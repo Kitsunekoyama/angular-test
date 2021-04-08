@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ProductService } from '../product-list/product.service';
 import { Observable} from "rxjs";
 import { FormBuilder } from '@angular/forms';
@@ -14,22 +14,12 @@ export class AddProduct {
     name: '',
     description: ''
   });
-  items = []
-  item : {
-    name : string,
-    description : string
-  }
-  constructor(private productService: ProductService, private formBuilder: FormBuilder){}
+  constructor(private productService: ProductService, private formBuilder: FormBuilder, private router: Router){}
   onSubmit(): void {console.log("test")}
   addProduct(): void {
-    console.log("test")
     console.log(this.checkoutForm.value)
-    this.productService.addProduct(this.item);
-    this.item = null;//this.productService.clearCart();
-   // console.warn('Your order has been submitted', this.checkoutForm.value);
+    this.productService.addProduct(this.checkoutForm.value);
+    this.checkoutForm.reset();
+    this.router.navigate(['/']);
   }
-  /*ngOnInit() {
-    this.id = this.route.snapshot.params['productId'];
-    this.product = this.productService.getProduct(this.id);
-  }*/
 }

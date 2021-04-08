@@ -1,5 +1,5 @@
 <h2>Add Products</h2>
-<form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+<form [formGroup]="checkoutForm" (ngSubmit)="addProduct()">
 <div>
   <label for="name">
       Name
@@ -12,7 +12,7 @@
 </label>
 <input id="description" type="text" formControlName="description">
 </div>
-<a  [routerLink]="['/']" class="button" type="submit">
+<button   class="button" type="submit" >
   Create
-</a>
+</button>
 </form>

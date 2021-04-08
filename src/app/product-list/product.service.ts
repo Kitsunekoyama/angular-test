@@ -11,13 +11,13 @@ export class ProductService {
   products; //: Observable<Object>;
   //items = [];
   constructor(private http: HttpClient) {}
-  addProduct(items) {
-    console.log(items);
+  addProduct(item) {
+    console.log(item.name);
     fetch('https://jsonplaceholder.typicode.com/posts', {
   method: 'POST',
   body: JSON.stringify({
-    title: 'foo',
-    body: 'bar',
+    title: item.name,
+    body: item.description,
     userId: 1,
   }),
   headers: {

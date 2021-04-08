@@ -1,6 +1,4 @@
 <h2>Products</h2>
-
-<button (click)="fetchProduct()">Test</button>
 <div *ngFor="let product of products | async">
   <h3>
     <a [title]="product.title" [routerLink]="['/products', product.id]">
