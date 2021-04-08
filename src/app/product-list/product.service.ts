@@ -9,9 +9,10 @@ import { Observable, throwError } from "rxjs";
 @Injectable()
 export class ProductService {
   products; //: Observable<Object>;
-  items = [];
+  //items = [];
   constructor(private http: HttpClient) {}
-  addProduct() {
+  addProduct(items) {
+    console.log(items.name);
     fetch('https://jsonplaceholder.typicode.com/posts', {
   method: 'POST',
   body: JSON.stringify({
@@ -26,9 +27,9 @@ export class ProductService {
   .then((response) => response.json())
   .then((json) => console.log(json));
   }
-  getItems() {
+  /*getItems() {
     return this.items;
-  }
+  }*/
   getProduct(id): Observable<any> {
     
     return this.http.get('https://jsonplaceholder.typicode.com/posts/'+id);
@@ -36,7 +37,6 @@ export class ProductService {
   }
   fetchProduct(): Observable<Object> {
     this.products = this.http.get('https://jsonplaceholder.typicode.com/posts');
-    this.items = this.products
     return this.products;
   }
 }
