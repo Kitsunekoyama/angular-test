@@ -1,12 +1,17 @@
 <h2>Add Products</h2>
-<label for="name">
+
+
+<form [formGroup]="checkoutForm" (ngSubmit)="addProduct()">
+
+  <label for="name">
       Name
     </label>
-<input id="name" type="text">
+<input id="name" type="text" formControlName="name">
 <label for="description">
       Description
 </label>
-<input id="description" type="text">
-<a [routerLink]="['/']" (click)="addProduct()" class="button">
+<input id="description" type="text" formControlname="description">
+<a  [routerLink]="['/']" class="button" type="submit">
   Create
 </a>
+</form>

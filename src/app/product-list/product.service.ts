@@ -12,7 +12,7 @@ export class ProductService {
   //items = [];
   constructor(private http: HttpClient) {}
   addProduct(items) {
-    console.log(items.name);
+    console.log(items);
     fetch('https://jsonplaceholder.typicode.com/posts', {
   method: 'POST',
   body: JSON.stringify({
